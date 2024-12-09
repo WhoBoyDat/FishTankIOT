@@ -86,7 +86,7 @@ def get_temperature_humidity(): # Get temperature
 
 # Function to post temperature to ThingSpeak
 def post_to_thingspeak(temperature): 
-    API_KEY = 'FXWM32HNBBOHQ6YK' # API Key for thingspeak
+    API_KEY = '...' # API Key for thingspeak
     url = f'https://api.thingspeak.com/update?api_key={API_KEY}&field1={temperature}' # put temperature reading into thingspeak graph 
     requests.get(url)
 
@@ -100,10 +100,10 @@ def check_moisture(): # function to check moisture
     if GPIO.input(moisture_pin) == 1: # if moisture detected
         bot.sendMessage(CHAT_ID, "waterlevel is good")
 
-TOKEN = "7208472672:AAH11P-jVwK0QtSG4gCNFiov2e0hoeI7dtA" # telegram channel token
-CHAT_ID = "1432292156" # telegram channel ID
+TOKEN = "..." # telegram channel token
+CHAT_ID = "..." # telegram channel ID
 bot = telepot.Bot(TOKEN) # to use the telegram bot 
-AUTHORIZED_USERS = [1493171902, 1432292156] # only authorized users only two people 
+AUTHORIZED_USERS = [...] # only authorized users only two people 
 
 def send_menu(chat_id):
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
